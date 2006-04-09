@@ -12,6 +12,7 @@ URL:		http://smarty.incutio.com/?page=SmartyGettext
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
 Requires:	php-common
+Requires:	php-gettext
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
