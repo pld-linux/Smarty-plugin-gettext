@@ -1,5 +1,5 @@
 %define		_beta b1
-%define		_rel 1
+%define		_rel 2
 Summary:	Gettext support for Smarty
 Summary(pl):	Obs³uga gettexta dla systemu Smarty
 Name:		smarty-gettext
@@ -27,6 +27,15 @@ templating engine <http://smarty.php.net/>.
 smarty-gettext dodaje obs³ugê gettexta do systemu Smarty - popularnego
 silnika szablonów dla PHP - <http://smarty.php.net/>.
 
+%package devel
+Summary:	Development tools for smarty-gettext
+Group:		Development
+# does not require base
+
+%description devel
+This package contains tsmarty2c program which can be used to extract
+gettext compatible strings.
+
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
 %{__sed} -i -e '1s,#!.*php,#!%{_bindir}/php,' tsmarty2c.php
@@ -44,5 +53,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%attr(755,root,root) %{_bindir}/tsmarty2c
 %{_smartyplugindir}/*.php
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/tsmarty2c
