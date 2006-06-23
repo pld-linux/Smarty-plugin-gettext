@@ -29,12 +29,17 @@ silnika szablonów dla PHP - <http://smarty.php.net/>.
 
 %package devel
 Summary:	Development tools for smarty-gettext
+Summary(pl):	Narzêdzia programistyczne dla pakietu smarty-gettext
 Group:		Development
 # does not require base
 
 %description devel
 This package contains tsmarty2c program which can be used to extract
 gettext compatible strings.
+
+%description devel -l pl
+Ten pakiet zawiera program tsmarty2c, którego mo¿na u¿yæ do wyci±gania
+³añcuchów kompatybilnych z gettextem.
 
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
