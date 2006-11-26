@@ -1,5 +1,5 @@
 %define		_beta b1
-%define		_rel 2
+%define		_rel 3
 Summary:	Gettext support for Smarty
 Summary(pl):	Obs³uga gettexta dla systemu Smarty
 Name:		smarty-gettext
@@ -12,8 +12,8 @@ Source0:	http://dl.sourceforge.net/smarty-gettext/%{name}-%{version}%{_beta}.tgz
 URL:		http://smarty.incutio.com/?page=SmartyGettext
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
+Requires:	php(gettext)
 Requires:	php-common
-Requires:	php-gettext
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
