@@ -1,7 +1,7 @@
 %define		_beta b1
 %define		_rel 3
 Summary:	Gettext support for Smarty
-Summary(pl.UTF-8):   Obsługa gettexta dla systemu Smarty
+Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		smarty-gettext
 Version:	1.0
 Release:	0.%{_beta}.%{_rel}
@@ -29,7 +29,7 @@ silnika szablonów dla PHP - <http://smarty.php.net/>.
 
 %package devel
 Summary:	Development tools for smarty-gettext
-Summary(pl.UTF-8):   Narzędzia programistyczne dla pakietu smarty-gettext
+Summary(pl.UTF-8):	Narzędzia programistyczne dla pakietu smarty-gettext
 Group:		Development
 # does not require base
 
