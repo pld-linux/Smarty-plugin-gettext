@@ -1,7 +1,7 @@
 %define		_beta b1
 %define		_rel 3
 Summary:	Gettext support for Smarty
-Summary(pl):	Obs³uga gettexta dla systemu Smarty
+Summary(pl.UTF-8):   ObsÅ‚uga gettexta dla systemu Smarty
 Name:		smarty-gettext
 Version:	1.0
 Release:	0.%{_beta}.%{_rel}
@@ -23,13 +23,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 smarty-gettext provides gettext support for Smarty, the popular PHP
 templating engine <http://smarty.php.net/>.
 
-%description -l pl
-smarty-gettext dodaje obs³ugê gettexta do systemu Smarty - popularnego
-silnika szablonów dla PHP - <http://smarty.php.net/>.
+%description -l pl.UTF-8
+smarty-gettext dodaje obsÅ‚ugÄ™ gettexta do systemu Smarty - popularnego
+silnika szablonÃ³w dla PHP - <http://smarty.php.net/>.
 
 %package devel
 Summary:	Development tools for smarty-gettext
-Summary(pl):	Narzêdzia programistyczne dla pakietu smarty-gettext
+Summary(pl.UTF-8):   NarzÄ™dzia programistyczne dla pakietu smarty-gettext
 Group:		Development
 # does not require base
 
@@ -37,9 +37,9 @@ Group:		Development
 This package contains tsmarty2c program which can be used to extract
 gettext compatible strings.
 
-%description devel -l pl
-Ten pakiet zawiera program tsmarty2c, którego mo¿na u¿yæ do wyci±gania
-³añcuchów kompatybilnych z gettextem.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera program tsmarty2c, ktÃ³rego moÅ¼na uÅ¼yÄ‡ do wyciÄ…gania
+Å‚aÅ„cuchÃ³w kompatybilnych z gettextem.
 
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
