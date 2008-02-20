@@ -1,5 +1,5 @@
 %define		_beta b1
-%define		_rel 3
+%define		_rel 4
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		smarty-gettext
