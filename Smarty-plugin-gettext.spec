@@ -1,14 +1,16 @@
-%define		_beta b1
-%define		_rel 4
+%define		subver	b1
+%define		rel		5
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		smarty-gettext
 Version:	1.0
-Release:	0.%{_beta}.%{_rel}
+Release:	0.%{subver}.%{rel}
 License:	LGPL v2+
 Group:		Development/Languages/PHP
-Source0:	http://dl.sourceforge.net/smarty-gettext/%{name}-%{version}%{_beta}.tgz
+Source0:	http://downloads.sourceforge.net/smarty-gettext/%{name}-%{version}%{subver}.tgz
 # Source0-md5:	3795d4ce1a391e8eace9bd2adb5b1abb
+Source1:	http://bazaar.launchpad.net/~eventum-developers/eventum/trunk/download/head%3A/tsmarty2c-20091105141507-sh36mrwjgo63hzxk-1/tsmarty2c
+# Source1-md5:	589fd057a8dec5ee9796849885bb93c4
 URL:		http://smarty.incutio.com/?page=SmartyGettext
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
@@ -42,15 +44,13 @@ Ten pakiet zawiera program tsmarty2c, którego można użyć do wyciągania
 łańcuchów kompatybilnych z gettextem.
 
 %prep
-%setup -q -n %{name}-%{version}%{_beta}
-%{__sed} -i -e '1s,#!.*php,#!%{_bindir}/php,' tsmarty2c.php
+%setup -q -n %{name}-%{version}%{subver}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_smartyplugindir},%{_bindir}}
-
-install block.t.php $RPM_BUILD_ROOT%{_smartyplugindir}
-install tsmarty2c.php $RPM_BUILD_ROOT%{_bindir}/tsmarty2c
+cp -a block.t.php $RPM_BUILD_ROOT%{_smartyplugindir}
+install -p %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/tsmarty2c
 
 %clean
 rm -rf $RPM_BUILD_ROOT
