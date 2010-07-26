@@ -1,21 +1,26 @@
 %define		subver	b1
-%define		rel		5
+%define		rel		6
+%include	/usr/lib/rpm/macros.php
+%define		php_min_version 5.2.1
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
-Name:		smarty-gettext
+Name:		Smarty-plugin-gettext
 Version:	1.0
 Release:	0.%{subver}.%{rel}
 License:	LGPL v2+
 Group:		Development/Languages/PHP
-Source0:	http://downloads.sourceforge.net/smarty-gettext/%{name}-%{version}%{subver}.tgz
+Source0:	http://downloads.sourceforge.net/smarty-gettext/smarty-gettext-%{version}%{subver}.tgz
 # Source0-md5:	3795d4ce1a391e8eace9bd2adb5b1abb
 Source1:	http://bazaar.launchpad.net/~eventum-developers/eventum/trunk/download/head%3A/tsmarty2c-20091105141507-sh36mrwjgo63hzxk-1/tsmarty2c
 # Source1-md5:	589fd057a8dec5ee9796849885bb93c4
 URL:		http://smarty.incutio.com/?page=SmartyGettext
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
-Requires:	php(gettext)
-Requires:	php-common
+Requires:	php-common >= 4:%{php_min_version}
+Requires:	php-gettext
+Provides:	smarty-gettext = %{version}-%{release}
+Obsoletes:	smarty-gettext
+Obsoletes:	smarty-gettext-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,22 +34,8 @@ templating engine <http://smarty.php.net/>.
 smarty-gettext dodaje obsługę gettexta do systemu Smarty - popularnego
 silnika szablonów dla PHP - <http://smarty.php.net/>.
 
-%package devel
-Summary:	Development tools for smarty-gettext
-Summary(pl.UTF-8):	Narzędzia programistyczne dla pakietu smarty-gettext
-Group:		Development
-# does not require base
-
-%description devel
-This package contains tsmarty2c program which can be used to extract
-gettext compatible strings.
-
-%description devel -l pl.UTF-8
-Ten pakiet zawiera program tsmarty2c, którego można użyć do wyciągania
-łańcuchów kompatybilnych z gettextem.
-
 %prep
-%setup -q -n %{name}-%{version}%{subver}
+%setup -q -n smarty-gettext-%{version}%{subver}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,8 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%{_smartyplugindir}/*.php
-
-%files devel
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/tsmarty2c
+%{_smartyplugindir}/*.php
