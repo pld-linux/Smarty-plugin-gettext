@@ -14,6 +14,7 @@ Source0:	http://downloads.sourceforge.net/smarty-gettext/smarty-gettext-%{versio
 Source1:	http://bazaar.launchpad.net/~eventum-developers/eventum/trunk/download/head%3A/tsmarty2c-20091105141507-sh36mrwjgo63hzxk-1/tsmarty2c
 # Source1-md5:	589fd057a8dec5ee9796849885bb93c4
 URL:		http://smarty.incutio.com/?page=SmartyGettext
+BuildRequires:	rpm-php-pearprov
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
 Requires:	php-common >= 4:%{php_min_version}
