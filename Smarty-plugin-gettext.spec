@@ -1,5 +1,5 @@
 %define		subver	b1
-%define		rel		10
+%define		rel		11
 %include	/usr/lib/rpm/macros.php
 %define		php_min_version 5.2.1
 Summary:	Gettext support for Smarty
@@ -17,8 +17,8 @@ URL:		http://smarty.incutio.com/?page=SmartyGettext
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	sed >= 4.0
 Requires:	Smarty >= 2.6.10-4
+Requires:	php(core) >= %{php_min_version}
 Requires:	php(gettext)
-Requires:	php-common >= 4:%{php_min_version}
 Provides:	smarty-gettext = %{version}-%{release}
 Obsoletes:	smarty-gettext
 Obsoletes:	smarty-gettext-devel
