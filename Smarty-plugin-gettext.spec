@@ -25,8 +25,11 @@ Obsoletes:	smarty-gettext-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_smartyplugindir	%{_datadir}/php/Smarty/plugins
-%define		_smarty3plugindir	%{_datadir}/php/Smarty3/plugins
+%define		_smartyplugindir	%{php_data_dir}/Smarty/plugins
+%define		_smarty3plugindir	%{php_data_dir}/Smarty3/plugins
+
+# tsmarty2c is deliberately packaged to both packages with same name
+%define		_duplicate_files_terminate_build   0
 
 %description
 smarty-gettext provides gettext support for Smarty, the popular PHP
@@ -40,9 +43,9 @@ silnika szablonów dla PHP - <http://smarty.php.net/>.
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Group:		Development/Languages/PHP
-Requires:	php-Smarty >= 3.1.8-4
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(gettext)
+Requires:	php-Smarty >= 3.1.8-4
 
 %description -n php-Smarty-plugin-gettext
 smarty-gettext provides gettext support for Smarty, the popular PHP
@@ -58,8 +61,8 @@ silnika szablonów dla PHP - <http://smarty.php.net/>.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_smartyplugindir},%{_smarty3plugindir},%{_bindir}}
-cp -a block.t.php $RPM_BUILD_ROOT%{_smartyplugindir}
-cp -a block.t.php $RPM_BUILD_ROOT%{_smarty3plugindir}
+cp -p block.t.php $RPM_BUILD_ROOT%{_smartyplugindir}
+cp -p block.t.php $RPM_BUILD_ROOT%{_smarty3plugindir}
 install -p %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/tsmarty2c
 
 %clean
