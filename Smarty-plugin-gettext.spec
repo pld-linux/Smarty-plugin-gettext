@@ -1,14 +1,14 @@
-%include	/usr/lib/rpm/macros.php
 %define		php_min_version 5.2.1
+%include	/usr/lib/rpm/macros.php
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		Smarty-plugin-gettext
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	LGPL v2+
 Group:		Development/Languages/PHP
 Source0:	https://github.com/smarty-gettext/smarty-gettext/archive/%{version}/smarty-gettext-%{version}.tar.gz
-# Source0-md5:	ea0728f159d2c3cf42f62156fd9c4ef7
+# Source0-md5:	dcb7d63b4809abb8402cba73523b7137
 URL:		https://github.com/smarty-gettext/smarty-gettext
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	sed >= 4.0
