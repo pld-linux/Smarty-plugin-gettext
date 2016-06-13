@@ -3,12 +3,12 @@
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		Smarty-plugin-gettext
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	LGPL v2+
 Group:		Development/Languages/PHP
 Source0:	https://github.com/smarty-gettext/smarty-gettext/archive/%{version}/smarty-gettext-%{version}.tar.gz
-# Source0-md5:	dcb7d63b4809abb8402cba73523b7137
+# Source0-md5:	2ef33831e5bd530967bbb7400d29787b
 URL:		https://github.com/smarty-gettext/smarty-gettext
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	sed >= 4.0
