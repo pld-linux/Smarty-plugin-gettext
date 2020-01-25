@@ -1,5 +1,4 @@
 %define		php_min_version 5.2.1
-%include	/usr/lib/rpm/macros.php
 Summary:	Gettext support for Smarty
 Summary(pl.UTF-8):	Obsługa gettexta dla systemu Smarty
 Name:		Smarty-plugin-gettext
